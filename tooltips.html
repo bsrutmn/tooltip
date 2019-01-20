@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+	<title>-TooltipsJquery </title>
+	<script src="jquery-1.2.6.js" type="text/javascript" charset="utf8"></script>
+		<script type="text/javascript" charset="utf-8">
+			
+		$(document).ready(function(){
+			$("#mybox").hover(function(){
+		  //mouse enters
+		  
+		    $("#tooltip").css("display","block");
+			
+		},function(){
+		//mouse leaves
+			$("#tooltip").css("display","none");
+		});
+		
+			$(document).mousemove(function(event){
+			
+				var mx=event.pageX;
+		
+				var my=event.pageY;
+				$("#tooltip").css("left",mx+"px").css("top",my+"px");
+			});
+		
+		});
+		$(document).ready(function(){
+			$("#mybox2").hover(function(){
+		  //mouse enters
+		  
+		    $("#tooltip").css("display","block");
+			
+		},function(){
+		//mouse leaves
+			$("#tooltip").css("display","none");
+		});
+		
+			$(document).mousemove(function(event){
+			
+				var mx=event.pageX;
+		
+				var my=event.pageY;
+				$("#tooltip").css("left",mx+"px").css("top",my+"px");
+			});
+		
+		});
+		
+	</script>
+	
+	<style type="text/css" media="screen">
+	
+	#mybox,#mybox2
+	{
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:100px;
+	width:250px;
+	background-color:#000000;
+	color:#FFFFFF;
+	padding:10px;
+	text-align:center;
+	}
+	
+	#tooltip
+	{
+	position:absolute;
+	z-index:2;
+	width:300px;
+	padding:5px;
+	background-color:#A7A7A7;
+	border:2px solid #000000;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	display:none;
+	
+	}
+	
+	</style>
+	
+   </head>
+   
+<body>
+
+	<div id="tooltip">
+		This is more information </div>
+	
+	<div id="mybox">
+		Hover over me for more information
+	</div>		
+	
+	<div id="mybox2">
+		This is second information 
+	</div>
+
+</body>
+</html>
